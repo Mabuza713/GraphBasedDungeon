@@ -7,10 +7,6 @@ public class Node : MonoBehaviour
     public BoundsInt bounds;
     public GameObject GameObj;
 
-    public void Awake()
-    {
-        GameObj = transform.gameObject;
-    }
     enum chamberType
     { 
         room,
