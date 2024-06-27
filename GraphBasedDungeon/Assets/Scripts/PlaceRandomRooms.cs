@@ -30,7 +30,7 @@ namespace GraphDungeon
 
             PlaceRooms();
             Triangulation();
-
+            transform.GetComponent<PrimAlgo>().PrimAlgorithm();
 
         }
 
@@ -154,7 +154,7 @@ namespace GraphDungeon
             edge2.source = nodeAppended; edge2.target = node2;
             edge3.source = nodeAppended; edge3.target = node3;
 
-            edge1.Draw() ; edge2.Draw() ; edge3.Draw();
+            //edge1.Draw() ; edge2.Draw() ; edge3.Draw();
 
             Edges.Add(edge1);
             Edges.Add(edge2);

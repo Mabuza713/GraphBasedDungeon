@@ -1,6 +1,7 @@
 using GraphDungeon;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 
 
@@ -9,50 +10,60 @@ namespace GraphDungeon
     public class PrimAlgo : MonoBehaviour
     {
         public List<Edge> finalEdgeList = new List<Edge>();
-        public bool StepInPrimAlgorithm(Node nodeMain)
-        {
-            float minWeight = 10000000f;
-            Node rememberedNode = null;
-            foreach (Node nodeTemp in nodeMain.linkedNodes)
-            {
-                if (transform.GetComponent<PlaceRandomRooms>().listOfNodes.Contains(nodeTemp))
-                {
-                    Debug.Log("dzilaa");
-                    Edge tempEdge = new Edge();
-                    tempEdge.source = nodeMain; tempEdge.target = nodeTemp;
-
-                    tempEdge.CalculateWeight();
-                    if (tempEdge.weight < minWeight)
-                    {
-                        minWeight = tempEdge.weight;
-                        rememberedNode = nodeTemp;
-                    }
-                }
-
-            }
-            if (rememberedNode == null)
-            {
-                return false;
-            }
-            Edge newEdge = new Edge();
-            newEdge.source = nodeMain; newEdge.target = rememberedNode;
-            newEdge.weight = minWeight;
-
-            finalEdgeList.Add(newEdge);
-            return true;
-        }
-
+        public List<Edge> currentPossibleEdges = new List<Edge>();
+        public List<Node> activatedNodes = new List<Node>();
         public void PrimAlgorithm()
         {
             Node node = transform.GetComponent<PlaceRandomRooms>().listOfNodes[0];
-            while (transform.GetComponent<PlaceRandomRooms>().listOfNodes.Count > 0)
+            activatedNodes.Add(node);
+            while (finalEdgeList.Count != transform.GetComponent<PlaceRandomRooms>().listOfNodes.Count - 1)
             {
-                Debug.Log("here");               
+                CurrentPossibleEdges();
+                Edge edgeToAppend = FindSmallestWaightEdge();
+                edgeToAppend.DrawFinalLine();
+                finalEdgeList.Add(edgeToAppend);
+                Debug.Log(finalEdgeList.Count);
 
 
             }
 
         }
+
+        public void CurrentPossibleEdges()
+        {
+            currentPossibleEdges.Clear();
+            foreach (Node mainNode in activatedNodes)
+            {
+                foreach (Node tempNode in mainNode.linkedNodes)
+                {
+                    Edge tempEdge = new Edge();
+                    tempEdge.source = mainNode; tempEdge.target = tempNode;
+                    tempEdge.CalculateWeight();
+                    if (!activatedNodes.Contains(tempNode))
+                    {
+                        currentPossibleEdges.Add(tempEdge);
+                    }
+                }
+            }
+        }
+
+
+        public Edge FindSmallestWaightEdge()
+        {
+            float minWeight = 10000;
+            Edge rememberedEdge = null;
+            foreach (Edge tempEdge in currentPossibleEdges)
+            {
+                if (tempEdge.weight < minWeight)
+                {
+                    minWeight = tempEdge.weight;
+                    rememberedEdge = tempEdge;
+                }
+            }
+            activatedNodes.Add(rememberedEdge.target);
+            return rememberedEdge;
+        }
+
     }
 
 

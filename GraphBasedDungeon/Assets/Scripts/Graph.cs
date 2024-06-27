@@ -39,9 +39,9 @@ namespace GraphDungeon
             Debug.DrawLine(source.bounds.position, target.bounds.position, Color.red,10000f);
         }
 
-        public void DrawFinalLine(Vector3 point1, Vector3 point2)
+        public void DrawFinalLine()
         {
-            Debug.DrawLine(point1, point2, Color.green, 10000f);
+            Debug.DrawLine(source.bounds.position, target.bounds.position, Color.green, 10000f);
         }
 
 
