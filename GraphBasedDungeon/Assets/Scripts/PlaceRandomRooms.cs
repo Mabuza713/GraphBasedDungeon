@@ -13,9 +13,9 @@ namespace GraphDungeon
     {
         
 
-        [SerializeField] int RoomAmount = 15;
-        [SerializeField] Vector3 boundryVec;
-        [SerializeField] Vector3 roomMaxSize;
+        [SerializeField] int RoomAmount;
+        public Vector3 boundryVec;
+        public Vector3 roomMaxSize;
         [SerializeField] int howFarApart;
         public List<Node> listOfNodes = new List<Node>();
         public GameObject prefab;
@@ -26,15 +26,14 @@ namespace GraphDungeon
 
         private void Start()
         {
-            List<Node> Nodes = new List<Node>();
 
             PlaceRooms();
             Triangulation();
             transform.GetComponent<PrimAlgo>().PrimAlgorithm();
-
+            transform.GetComponent<PathFinder>().grid.CreateGrid();
         }
 
-        private void PlaceRooms()
+        private void PlaceRooms() 
         {
             for (int i = 0; i < RoomAmount; i++)
             {
@@ -48,9 +47,9 @@ namespace GraphDungeon
                     (int)Random.Range(-boundryVec.z, boundryVec.z));
 
                 Vector3Int size = new Vector3Int(
-                    (int)Random.Range(3, 3 + roomMaxSize.x),
-                    (int)Random.Range(3, 3 + roomMaxSize.y),
-                    (int)Random.Range(3, 3 + roomMaxSize.z));
+                    GenerateRandomEvenNumber(2, (int)roomMaxSize.x),
+                    GenerateRandomEvenNumber(1, (int)roomMaxSize.y),
+                    GenerateRandomEvenNumber(2, (int)roomMaxSize.z));
 
                 // Creating tempNode and its offset it will work only for rooms on cube plain
                 Node tempNode = new Node();
@@ -89,7 +88,7 @@ namespace GraphDungeon
         }
 
 
-        private bool BoundryCheck(Node node1, Node node2)
+        private bool BoundryCheck(Node node1, Node node2) // function that checks if two rooms are overlaping
         {
             if ((Mathf.Abs(node1.bounds.position.x) >= (Mathf.Abs(node2.bounds.position.x) + node2.bounds.size.x)) ||
                 (Mathf.Abs(node1.bounds.position.y) >= (Mathf.Abs(node2.bounds.position.y) + node2.bounds.size.y)) ||
@@ -112,7 +111,7 @@ namespace GraphDungeon
         }
 
 
-        void Triangulation() // XD lowkey bad but no idea 
+        void Triangulation() // function making tetrahedrons where verts = nodes
         {
             for (int i = 0; i < listOfNodes.Count; i++)
             {
@@ -143,7 +142,7 @@ namespace GraphDungeon
 
             }
         }
-        private void AddToList(Node node1, Node node2, Node node3, Node nodeAppended)
+        private void AddToList(Node node1, Node node2, Node node3, Node nodeAppended) // function that helps me wrap code could have done it with constructor w.e tho
         {
             nodeAppended.linkedNodes.Add(node1);
             nodeAppended.linkedNodes.Add(node2);
@@ -161,7 +160,7 @@ namespace GraphDungeon
             Edges.Add(edge3);
         }
 
-        private Vector4 CalculateCircumsphere(Vector3 point1, Vector3 point2, Vector3 point3, Vector3 point4)
+        private Vector4 CalculateCircumsphere(Vector3 point1, Vector3 point2, Vector3 point3, Vector3 point4) // Function that calculates cicumsphere that intersects four points
         {
             Matrix4x4 xMatrix = new Matrix4x4(new Vector4(point1.sqrMagnitude, point2.sqrMagnitude, point3.sqrMagnitude, point4.sqrMagnitude),
                                               new Vector4(point1.x, point2.x, point3.x, point4.x),
@@ -193,7 +192,15 @@ namespace GraphDungeon
             return result;
 
         }
-
+        public int GenerateRandomEvenNumber(int max, int min) // Function that generates even number its crucial soo our grid cells are alligned exacly with rooms
+        {
+            int randomNumber = Random.Range(min, max + 1);
+            if (randomNumber % 2 == 0) 
+            {
+                return randomNumber;
+            }
+            return randomNumber + 1;
+        }
     }
 
 }

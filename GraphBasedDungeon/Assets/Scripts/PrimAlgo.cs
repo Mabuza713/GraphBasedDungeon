@@ -22,7 +22,6 @@ namespace GraphDungeon
                 Edge edgeToAppend = FindSmallestWaightEdge();
                 edgeToAppend.DrawFinalLine();
                 finalEdgeList.Add(edgeToAppend);
-                Debug.Log(finalEdgeList.Count);
 
 
             }

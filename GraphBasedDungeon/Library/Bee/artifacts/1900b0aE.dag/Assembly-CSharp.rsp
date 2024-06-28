@@ -345,8 +345,11 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Scripts/Node.cs"
+"Assets/Scripts/Graph.cs"
+"Assets/Scripts/Grid.cs"
+"Assets/Scripts/PathFinder.cs"
 "Assets/Scripts/PlaceRandomRooms.cs"
+"Assets/Scripts/PrimAlgo.cs"
 -langversion:9.0
 
 /deterministic

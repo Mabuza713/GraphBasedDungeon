@@ -9,34 +9,34 @@ namespace GraphDungeon
 {
     public class Node
     {
+        // Variables used to generate Rooms and Edges
         public BoundsInt bounds;
         public GameObject GameObj;
         public List<Node> linkedNodes = new List<Node>();
-        
-        enum noderType
-        {
-            room,
-            hallway,
-            stairs,
-            Offset
-        }
 
+
+        // Variables used for path finding algorithm
+        public Vector3 worldPosition = Vector3.zero;
+        public int posAtGirdX;
+        public int posAtGirdY;
+        public int posAtGirdZ;
+        public bool walkable;
 
     }
 
     public class Edge : IComparable<Edge>
     {
-        public Node source; public Node target;
+        public Node source; public Node target; // source Node is first node from which edge is starting
         public float weight;
-        
+
         public void CalculateWeight()
         {
             weight = Vector3.Distance(source.bounds.position, target.bounds.position);
         }
-        
+
         public void Draw()
         {
-            Debug.DrawLine(source.bounds.position, target.bounds.position, Color.red,10000f);
+            Debug.DrawLine(source.bounds.position, target.bounds.position, Color.red, 10000f);
         }
 
         public void DrawFinalLine()

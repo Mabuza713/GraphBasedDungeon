@@ -311,6 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1036744636}
   - component: {fileID: 1036744637}
+  - component: {fileID: 1036744638}
   m_Layer: 0
   m_Name: DungeonCreatorMenager
   m_TagString: Untagged
@@ -345,10 +346,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b080533c782d6a9499b0320c4a6e0111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomAmount: 120
-  boundryVec: {x: 200, y: 25, z: 200}
-  roomMaxSize: {x: 15, y: 15, z: 15}
-  howFarApart: 5
-  listOfNodes: []
+  RoomAmount: 100
+  boundryVec: {x: 100, y: 500, z: 100}
+  roomMaxSize: {x: 25, y: 0, z: 25}
+  howFarApart: 2
   prefab: {fileID: 50801655272301081, guid: 2927c0f31fdd0f64ba110445c457120c, type: 3}
   materialRoom: {fileID: 2100000, guid: ec01a13941fd2dc4282f9090e5344796, type: 2}
+--- !u!114 &1036744638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036744634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ae46d1642c33c4ab9abedf6478cdf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
