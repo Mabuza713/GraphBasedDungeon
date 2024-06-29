@@ -312,6 +312,8 @@ GameObject:
   - component: {fileID: 1036744636}
   - component: {fileID: 1036744637}
   - component: {fileID: 1036744638}
+  - component: {fileID: 1036744639}
+  - component: {fileID: 1036744640}
   m_Layer: 0
   m_Name: DungeonCreatorMenager
   m_TagString: Untagged
@@ -327,8 +329,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036744634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.565341, y: 1.4069722, z: -4.278504}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -346,10 +348,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b080533c782d6a9499b0320c4a6e0111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomAmount: 100
-  boundryVec: {x: 100, y: 500, z: 100}
-  roomMaxSize: {x: 25, y: 0, z: 25}
-  howFarApart: 2
+  RoomAmount: 10
+  boundryVec: {x: 50, y: 100, z: 50}
+  roomMaxSize: {x: 9, y: 1, z: 9}
+  howFarApart: 6
   prefab: {fileID: 50801655272301081, guid: 2927c0f31fdd0f64ba110445c457120c, type: 3}
   materialRoom: {fileID: 2100000, guid: ec01a13941fd2dc4282f9090e5344796, type: 2}
 --- !u!114 &1036744638
@@ -364,3 +366,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ae46d1642c33c4ab9abedf6478cdf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1036744639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036744634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eebae8968428da6438c17c1131dc33ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pref: {fileID: 50801655272301081, guid: 2927c0f31fdd0f64ba110445c457120c, type: 3}
+  grid: {fileID: 0}
+--- !u!114 &1036744640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036744634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8792b61698840454f9485dd9167328c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unwalkableMask:
+    serializedVersion: 2
+    m_Bits: 64
+  gridWorldSize: {x: 0, y: 0, z: 0}

@@ -23,7 +23,6 @@ namespace GraphDungeon
                 edgeToAppend.DrawFinalLine();
                 finalEdgeList.Add(edgeToAppend);
 
-
             }
 
         }

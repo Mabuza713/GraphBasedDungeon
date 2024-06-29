@@ -21,6 +21,13 @@ namespace GraphDungeon
         public int posAtGirdY;
         public int posAtGirdZ;
         public bool walkable;
+        public Node parent;
+
+        // Variables used for A*
+        public float gCost;
+        public float hCost;
+        public float finalCost;
+
 
     }
 
