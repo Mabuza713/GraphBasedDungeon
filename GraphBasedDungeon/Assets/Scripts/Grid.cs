@@ -31,12 +31,16 @@ namespace GraphDungeon
                     {
                         Vector3 worldPos = worldBottomLeft + Vector3.right * (x) + Vector3.forward * (z ) + Vector3.up * (y );
                         Physics.SyncTransforms();
-                        bool isWalkable = !(Physics.CheckSphere(worldPos,0.45f, unwalkableMask));
+                        bool isWalkable = !(Physics.CheckSphere(worldPos,0.5f, unwalkableMask));
                         if (grid[x, y, z] == null) { grid[x, y, z] = new Node(); }
                         
                         grid[x, y, z].worldPosition = worldPos;
                         grid[x, y, z].posAtGirdX = x; grid[x, y, z].posAtGirdY = y; grid[x, y, z].posAtGirdZ = z;
                         grid[x, y, z].walkable = isWalkable;
+                        if (isWalkable == false)
+                        {
+                            Debug.Log("cant");
+                        }
                     }
                 }
             }
@@ -73,7 +77,8 @@ namespace GraphDungeon
                         }
                         else if (node.posAtGirdX + i >= 0 && node.posAtGirdX + i < gridWorldSize.x &&
                                  node.posAtGirdY + j >= 0 && node.posAtGirdY + j < gridWorldSize.y &&
-                                 node.posAtGirdZ + k >= 0 && node.posAtGirdZ + k < gridWorldSize.z )
+                                 node.posAtGirdZ + k >= 0 && node.posAtGirdZ + k < gridWorldSize.z &&
+                                 Mathf.Abs(i) + Mathf.Abs(j) + Mathf.Abs(k) <= 1)
                         {
 
                             result.Add(grid[node.posAtGirdX + i, node.posAtGirdY + j, node.posAtGirdZ + k]);

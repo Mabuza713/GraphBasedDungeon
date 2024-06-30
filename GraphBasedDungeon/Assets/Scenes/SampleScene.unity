@@ -348,11 +348,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b080533c782d6a9499b0320c4a6e0111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomAmount: 10
-  boundryVec: {x: 50, y: 100, z: 50}
-  roomMaxSize: {x: 9, y: 1, z: 9}
-  howFarApart: 6
+  RoomAmount: 75
+  boundryVec: {x: 30, y: 250, z: 30}
+  roomMaxSize: {x: 9, y: 3, z: 9}
+  howFarApart: 3
   prefab: {fileID: 50801655272301081, guid: 2927c0f31fdd0f64ba110445c457120c, type: 3}
+  hallwayMask:
+    serializedVersion: 2
+    m_Bits: 128
   materialRoom: {fileID: 2100000, guid: ec01a13941fd2dc4282f9090e5344796, type: 2}
 --- !u!114 &1036744638
 MonoBehaviour:
@@ -378,8 +381,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eebae8968428da6438c17c1131dc33ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pref: {fileID: 50801655272301081, guid: 2927c0f31fdd0f64ba110445c457120c, type: 3}
+  pref: {fileID: 174010380282663623, guid: 3dfd997ae6ff636459418b922f02ebb1, type: 3}
   grid: {fileID: 0}
+  hallwaysMask:
+    serializedVersion: 2
+    m_Bits: 192
 --- !u!114 &1036744640
 MonoBehaviour:
   m_ObjectHideFlags: 0

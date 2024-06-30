@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -20,7 +21,7 @@ namespace GraphDungeon
         [SerializeField] int howFarApart;
         public List<Node> listOfNodes = new List<Node>();
         public GameObject prefab;
-
+        public LayerMask hallwayMask;
         public List<Edge> Edges = new List<Edge>();
 
         public Material materialRoom;
@@ -39,24 +40,25 @@ namespace GraphDungeon
         }
         public void PlaceHallways(Edge edge)
         {
-            Vector3Int startVecOffset = new Vector3Int(Mathf.FloorToInt( edge.source.worldPosition.x + edge.source.bounds.size.x / 2),
-                                                        Mathf.FloorToInt(edge.source.worldPosition.y - edge.source.bounds.size.y / 2),
-                                                        Mathf.FloorToInt(edge.source.worldPosition.z + edge.source.bounds.size.z / 2));
-
-            Vector3Int endingVecOffset = new Vector3Int(Mathf.FloorToInt(edge.target.worldPosition.x + edge.target.bounds.size.x / 2),
-                                                        Mathf.FloorToInt(edge.target.worldPosition.y - edge.target.bounds.size.y / 2),
-                                                        Mathf.FloorToInt(edge.target.worldPosition.z + edge.target.bounds.size.z / 2));
+            Vector3Int startVecOffset = new Vector3Int(Mathf.FloorToInt( edge.source.worldPosition.x ),
+                                                        Mathf.FloorToInt(edge.source.worldPosition.y ),
+                                                        Mathf.FloorToInt(edge.source.worldPosition.z ));
+                                                                                                     
+            Vector3Int endingVecOffset = new Vector3Int(Mathf.FloorToInt(edge.target.worldPosition.x ),
+                                                        Mathf.FloorToInt(edge.target.worldPosition.y ),
+                                                        Mathf.FloorToInt(edge.target.worldPosition.z ));
 
 
             //GameObject temp = Instantiate(prefab);
             //temp.transform.position = startVecOffset;
             Node starting = transform.GetComponent<Grid>().grid[startVecOffset.x + boundryVec.x, startVecOffset.y + boundryVec.y, startVecOffset.z + boundryVec.z];
-            Node ending = transform.GetComponent<Grid>().grid[endingVecOffset.x + boundryVec.x, endingVecOffset.y + boundryVec.y, endingVecOffset.z + boundryVec.z];
+            Node ending = transform.GetComponent<Grid>().grid[endingVecOffset.x + boundryVec.x , endingVecOffset.y + boundryVec.y , endingVecOffset.z + boundryVec.z];
             //Node starting = transform.GetComponent<Grid>().grid[0,0,0];
             //Node ending = transform.GetComponent<Grid>().grid[30,4,25];
-
-
             transform.GetComponent<PathFinder>().FindPath(starting, ending);
+
+
+
         }
         private void PlaceRooms()
         {
@@ -67,9 +69,9 @@ namespace GraphDungeon
 
                 // We draw random position and size of a room and offset of it to make sure rooms are placed apart of each other
                 Vector3Int position = new Vector3Int(
-                (int)Random.Range(-boundryVec.x, boundryVec.x),
-                (int)Random.Range(-boundryVec.y, boundryVec.y),
-                (int)Random.Range(-boundryVec.z, boundryVec.z));
+                (int)UnityEngine.Random.Range(-boundryVec.x, boundryVec.x),
+                (int)UnityEngine.Random.Range(-boundryVec.y, boundryVec.y),
+                (int)UnityEngine.Random.Range(-boundryVec.z, boundryVec.z));
                 Vector3Int size = new Vector3Int(
                 GenerateRandomEvenNumber(2, (int)roomMaxSize.x),
                 GenerateRandomEvenNumber(1, (int)roomMaxSize.y),
@@ -103,6 +105,7 @@ namespace GraphDungeon
                 if (place == true)
                 {
                     transform.GetComponent<Grid>().grid[(int)(position.x + boundryVec.x), (int)(position.y + boundryVec.y), (int)(position.z + boundryVec.z)] = tempNode;
+                    
                     listOfNodes.Add(tempNode);
                     PlaceRoom(tempNode.bounds.position, tempNode.bounds.size, tempNode);
                 }
@@ -218,7 +221,7 @@ namespace GraphDungeon
         }
         public int GenerateRandomEvenNumber(int max, int min) // Function that generates even number its crucial soo our grid cells are alligned exacly with rooms
         {
-            int randomNumber = Random.Range(min, max + 1);
+            int randomNumber = UnityEngine.Random.Range(min, max + 1);
             if (randomNumber % 2 != 0) 
             {
                 return randomNumber;
