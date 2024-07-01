@@ -37,10 +37,7 @@ namespace GraphDungeon
                         grid[x, y, z].worldPosition = worldPos;
                         grid[x, y, z].posAtGirdX = x; grid[x, y, z].posAtGirdY = y; grid[x, y, z].posAtGirdZ = z;
                         grid[x, y, z].walkable = isWalkable;
-                        if (isWalkable == false)
-                        {
-                            Debug.Log("cant");
-                        }
+
                     }
                 }
             }
@@ -91,9 +88,54 @@ namespace GraphDungeon
                 }
 
             }
+            Debug.Log(result.Count);
             return result;
         }
 
 
+
+        public void AssignCellType()
+        {
+            Physics.SyncTransforms();
+
+            foreach (var cell in grid)
+            {
+                Vector3Int positionInWorldSpace = new Vector3Int((int)cell.worldPosition.x, (int)cell.worldPosition.y, (int)cell.worldPosition.z);
+                Collider[] collidrs = Physics.OverlapSphere(positionInWorldSpace, 0.45f);
+
+                if (collidrs.Length >= 2)
+                {
+                    cell.typeOfTile = Node.tileType.Room; // might change
+                }
+                else if (collidrs.Length == 1)
+                {
+                    if (collidrs[0].gameObject.CompareTag("Room"))
+                    {
+                        cell.typeOfTile = Node.tileType.Room;
+                    }
+                    else
+                    {
+                        cell.typeOfTile= Node.tileType.Hallway;
+                    }
+                }
+                else
+                {
+                    cell.typeOfTile = Node.tileType.None;
+                }
+                foreach(Collider collider in collidrs)
+                {
+                    if (collider.gameObject.CompareTag("Room")){ Destroy(collider.gameObject); };
+                }
+            } 
+
+            foreach (var cell in grid)
+            {
+                if (cell.typeOfTile == Node.tileType.Room)
+                {
+                    transform.GetComponent<PlacePrefabs>().PlaceRoomPrefab(cell);
+                }
+            }
+
+        }
     }
 }

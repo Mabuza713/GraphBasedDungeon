@@ -29,6 +29,15 @@ namespace GraphDungeon
         public float hCost;
         public float finalCost;
 
+        public tileType typeOfTile = tileType.None;
+        // Variables used for placing prefab tiles
+        public enum tileType
+        {
+            None,
+            Hallway,
+            Room,
+            RoomWithLadder
+        }
 
     }
 

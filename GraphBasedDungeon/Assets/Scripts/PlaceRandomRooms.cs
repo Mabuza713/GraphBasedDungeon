@@ -37,6 +37,9 @@ namespace GraphDungeon
                 PlaceHallways(edge);
 
             }
+
+            transform.GetComponent<Grid>().AssignCellType();
+            
         }
         public void PlaceHallways(Edge edge)
         {
@@ -51,8 +54,8 @@ namespace GraphDungeon
 
             //GameObject temp = Instantiate(prefab);
             //temp.transform.position = startVecOffset;
-            Node starting = transform.GetComponent<Grid>().grid[startVecOffset.x + boundryVec.x, startVecOffset.y + boundryVec.y, startVecOffset.z + boundryVec.z];
-            Node ending = transform.GetComponent<Grid>().grid[endingVecOffset.x + boundryVec.x , endingVecOffset.y + boundryVec.y , endingVecOffset.z + boundryVec.z];
+            Node starting = transform.GetComponent<Grid>().grid[startVecOffset.x + boundryVec.x, startVecOffset.y + boundryVec.y -1, startVecOffset.z + boundryVec.z];
+            Node ending = transform.GetComponent<Grid>().grid[endingVecOffset.x + boundryVec.x , endingVecOffset.y + boundryVec.y-1 , endingVecOffset.z + boundryVec.z];
             //Node starting = transform.GetComponent<Grid>().grid[0,0,0];
             //Node ending = transform.GetComponent<Grid>().grid[30,4,25];
             transform.GetComponent<PathFinder>().FindPath(starting, ending);

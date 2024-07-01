@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\PathFinder.cs" />
     <Compile Include="Assets\Scripts\Graph.cs" />
     <Compile Include="Assets\Scripts\PlaceRandomRooms.cs" />
+    <Compile Include="Assets\Scripts\Prefabs\FinalPrefabs\PlacePrefabs.cs" />
     <Compile Include="Assets\Scripts\Grid.cs" />
     <Compile Include="Assets\Scripts\PrimAlgo.cs" />
   </ItemGroup>

@@ -29,9 +29,9 @@ namespace GraphDungeon
                 // This part 
                 for (int i = 1; i < openSet.Count; i++)
                 {
-                    if (openSet[i].finalCost <= currentNode.finalCost) // might need to change
+                    if (openSet[i].finalCost < currentNode.finalCost || openSet[i].finalCost == currentNode.finalCost) // might need to change
                     {
-                        if (openSet[i].hCost <= currentNode.hCost)
+                        if (openSet[i].hCost >= currentNode.hCost)
                         {
                             currentNode = openSet[i];
 
@@ -40,11 +40,9 @@ namespace GraphDungeon
                     } 
                 }
                 openSet.Remove(currentNode); closeSet.Add(currentNode);
-                Debug.Log(Physics.CheckSphere(currentNode.worldPosition, 1f, transform.GetComponent<Grid>().unwalkableMask) && closeSet.Count > 1);
 
                 if (currentNode == endNode)
                 {
-                    Debug.Log("sds");
                     TraceBackPath(startingNode, endNode);
                     return;
                 }
@@ -78,19 +76,11 @@ namespace GraphDungeon
 
             while (currentNode != startNode)
             {
-                if (Physics.CheckSphere(currentNode.worldPosition, 0.4f, hallwaysMask))
-                {
-                    Debug.Log("hereeee");
-                    currentNode.walkable = false;
-                    currentNode = currentNode.parent;
-                }
-                else
-                {
-                    GameObject inst = Instantiate(pref);
-                    inst.transform.position = currentNode.worldPosition;
-                    currentNode.walkable = false;
-                    currentNode = currentNode.parent;
-                }
+                GameObject inst = Instantiate(pref);
+                inst.transform.position = currentNode.worldPosition;
+                currentNode.walkable = false;
+                currentNode = currentNode.parent;
+                
                 
                 
             }
