@@ -31,13 +31,13 @@ namespace GraphDungeon
                 {
                     if (openSet[i].finalCost < currentNode.finalCost || openSet[i].finalCost == currentNode.finalCost) // might need to change
                     {
-                        if (openSet[i].hCost >= currentNode.hCost)
+                        if (openSet[i].hCost <= currentNode.hCost)
                         {
                             currentNode = openSet[i];
 
 
                         }
-                    } 
+                    }
                 }
                 openSet.Remove(currentNode); closeSet.Add(currentNode);
 
@@ -50,7 +50,7 @@ namespace GraphDungeon
 
                 foreach (Node neighbour in grid.GetNeighboringCells(currentNode))
                 {
-                    if (closeSet.Contains(neighbour) ) { continue; }
+                    if (closeSet.Contains(neighbour)) { continue; }
 
                     float costToNeighbour = currentNode.gCost + Vector3.Distance(currentNode.worldPosition, neighbour.worldPosition);
                     if (costToNeighbour < neighbour.gCost || !openSet.Contains(neighbour))
@@ -71,7 +71,7 @@ namespace GraphDungeon
 
         public void TraceBackPath(Node startNode, Node endNode)
         {
-            
+
             Node currentNode = endNode;
 
             while (currentNode != startNode)
@@ -80,15 +80,14 @@ namespace GraphDungeon
                 inst.transform.position = currentNode.worldPosition;
                 currentNode.walkable = false;
                 currentNode = currentNode.parent;
-                
-                
-                
+
+
+
             }
-            
-            
+
+
         }
     }
 
 
 }
-

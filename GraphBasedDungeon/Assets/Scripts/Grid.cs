@@ -21,7 +21,7 @@ namespace GraphDungeon
         public void CreateGrid()
         {
 
-            
+
             Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2 - Vector3.forward * gridWorldSize.z / 2 - Vector3.up * gridWorldSize.y / 2;
             for (int x = 0; x < gridWorldSize.x; x++)
             {
@@ -29,11 +29,11 @@ namespace GraphDungeon
                 {
                     for (int z = 0; z < gridWorldSize.z; z++)
                     {
-                        Vector3 worldPos = worldBottomLeft + Vector3.right * (x) + Vector3.forward * (z ) + Vector3.up * (y );
+                        Vector3 worldPos = worldBottomLeft + Vector3.right * (x) + Vector3.forward * (z) + Vector3.up * (y);
                         Physics.SyncTransforms();
-                        bool isWalkable = !(Physics.CheckSphere(worldPos,0.5f, unwalkableMask));
+                        bool isWalkable = !(Physics.CheckSphere(worldPos, 0.5f, unwalkableMask));
                         if (grid[x, y, z] == null) { grid[x, y, z] = new Node(); }
-                        
+
                         grid[x, y, z].worldPosition = worldPos;
                         grid[x, y, z].posAtGirdX = x; grid[x, y, z].posAtGirdY = y; grid[x, y, z].posAtGirdZ = z;
                         grid[x, y, z].walkable = isWalkable;
@@ -45,9 +45,9 @@ namespace GraphDungeon
         }
         public Vector3Int NodeFromWorldPoint(Vector3 worldPosition)
         {
-            float percentX = (worldPosition.x + gridWorldSize.x/2) / gridWorldSize.x;
-            float percentY = (worldPosition.y + gridWorldSize.y/2) / gridWorldSize.y; // Assuming y-axis in worldPosition
-            float percentZ = (worldPosition.z + gridWorldSize.z/2) / gridWorldSize.z; // Assuming z-axis in worldPosition
+            float percentX = (worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
+            float percentY = (worldPosition.y + gridWorldSize.y / 2) / gridWorldSize.y; // Assuming y-axis in worldPosition
+            float percentZ = (worldPosition.z + gridWorldSize.z / 2) / gridWorldSize.z; // Assuming z-axis in worldPosition
 
             percentX = Mathf.Clamp01(percentX);
             percentY = Mathf.Clamp01(percentY);
@@ -57,16 +57,16 @@ namespace GraphDungeon
             int y = Mathf.RoundToInt((gridWorldSize.y - 1) * percentY);
             int z = Mathf.RoundToInt((gridWorldSize.z - 1) * percentZ);
 
-            return new Vector3Int(x,y,z);
+            return new Vector3Int(x, y, z);
         }
         public List<Node> GetNeighboringCells(Node node)
         {
             List<Node> result = new List<Node>();
             for (int i = -1; i <= 1; i++) // Allows us to get neighboring cells on x axis
             {
-                for (int j = -1; j <= 1; j++) 
+                for (int j = -1; j <= 1; j++)
                 {
-                    for (int k = -1; k <= 1; k++) 
+                    for (int k = -1; k <= 1; k++)
                     {
                         if (i == 0 && j == 0 && k == 0) // We dont need to append checked node
                         {
@@ -80,7 +80,7 @@ namespace GraphDungeon
 
                             result.Add(grid[node.posAtGirdX + i, node.posAtGirdY + j, node.posAtGirdZ + k]);
 
-                            
+
 
                         }
                     }
@@ -88,7 +88,6 @@ namespace GraphDungeon
                 }
 
             }
-            Debug.Log(result.Count);
             return result;
         }
 
@@ -97,7 +96,7 @@ namespace GraphDungeon
         public void AssignCellType()
         {
             Physics.SyncTransforms();
-
+            List<Node> nodesToCheck = new List<Node>();
             foreach (var cell in grid)
             {
                 Vector3Int positionInWorldSpace = new Vector3Int((int)cell.worldPosition.x, (int)cell.worldPosition.y, (int)cell.worldPosition.z);
@@ -112,23 +111,25 @@ namespace GraphDungeon
                     if (collidrs[0].gameObject.CompareTag("Room"))
                     {
                         cell.typeOfTile = Node.tileType.Room;
+                        nodesToCheck.Add(cell);
                     }
                     else
                     {
-                        cell.typeOfTile= Node.tileType.Hallway;
+                        cell.typeOfTile = Node.tileType.Hallway;
+                        nodesToCheck.Add(cell);
                     }
                 }
                 else
                 {
                     cell.typeOfTile = Node.tileType.None;
                 }
-                foreach(Collider collider in collidrs)
+                foreach (Collider collider in collidrs)
                 {
-                    if (collider.gameObject.CompareTag("Room")){ Destroy(collider.gameObject); };
+                    if (collider.gameObject.CompareTag("Room")) { Destroy(collider.gameObject); };
                 }
-            } 
+            }
 
-            foreach (var cell in grid)
+            foreach (Node cell in nodesToCheck)
             {
                 if (cell.typeOfTile == Node.tileType.Room)
                 {

@@ -265,9 +265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b080533c782d6a9499b0320c4a6e0111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomAmount: 30
-  boundryVec: {x: 25, y: 50, z: 25}
-  roomMaxSize: {x: 15, y: 3, z: 15}
+  RoomAmount: 45
+  boundryVec: {x: 130, y: 10, z: 130}
+  roomMaxSize: {x: 35, y: 6, z: 35}
   howFarApart: 10
   prefab: {fileID: 50801655272301081, guid: 2927c0f31fdd0f64ba110445c457120c, type: 3}
   hallwayMask:

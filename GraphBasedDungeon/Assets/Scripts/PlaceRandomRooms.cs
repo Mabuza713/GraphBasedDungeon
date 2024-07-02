@@ -13,7 +13,7 @@ namespace GraphDungeon
 
     public class PlaceRandomRooms : MonoBehaviour
     {
-        
+
 
         [SerializeField] int RoomAmount;
         public Vector3Int boundryVec;
@@ -32,30 +32,30 @@ namespace GraphDungeon
             transform.GetComponent<Grid>().CreateGrid();
             transform.GetComponent<PrimAlgo>().PrimAlgorithm();
             List<Edge> finalEdges = transform.GetComponent<PrimAlgo>().finalEdgeList;
-            foreach (Edge edge in finalEdges )
+            foreach (Edge edge in finalEdges)
             {
                 PlaceHallways(edge);
 
             }
 
             transform.GetComponent<Grid>().AssignCellType();
-            
+
         }
         public void PlaceHallways(Edge edge)
         {
-            Vector3Int startVecOffset = new Vector3Int(Mathf.FloorToInt( edge.source.worldPosition.x ),
-                                                        Mathf.FloorToInt(edge.source.worldPosition.y ),
-                                                        Mathf.FloorToInt(edge.source.worldPosition.z ));
-                                                                                                     
-            Vector3Int endingVecOffset = new Vector3Int(Mathf.FloorToInt(edge.target.worldPosition.x ),
-                                                        Mathf.FloorToInt(edge.target.worldPosition.y ),
-                                                        Mathf.FloorToInt(edge.target.worldPosition.z ));
+            Vector3Int startVecOffset = new Vector3Int(Mathf.FloorToInt(edge.source.worldPosition.x),
+                                                        Mathf.FloorToInt(edge.source.worldPosition.y),
+                                                        Mathf.FloorToInt(edge.source.worldPosition.z));
+
+            Vector3Int endingVecOffset = new Vector3Int(Mathf.FloorToInt(edge.target.worldPosition.x),
+                                                        Mathf.FloorToInt(edge.target.worldPosition.y),
+                                                        Mathf.FloorToInt(edge.target.worldPosition.z));
 
 
             //GameObject temp = Instantiate(prefab);
             //temp.transform.position = startVecOffset;
-            Node starting = transform.GetComponent<Grid>().grid[startVecOffset.x + boundryVec.x, startVecOffset.y + boundryVec.y -1, startVecOffset.z + boundryVec.z];
-            Node ending = transform.GetComponent<Grid>().grid[endingVecOffset.x + boundryVec.x , endingVecOffset.y + boundryVec.y-1 , endingVecOffset.z + boundryVec.z];
+            Node starting = transform.GetComponent<Grid>().grid[startVecOffset.x + boundryVec.x, startVecOffset.y + boundryVec.y - 1, startVecOffset.z + boundryVec.z];
+            Node ending = transform.GetComponent<Grid>().grid[endingVecOffset.x + boundryVec.x, endingVecOffset.y + boundryVec.y - 1, endingVecOffset.z + boundryVec.z];
             //Node starting = transform.GetComponent<Grid>().grid[0,0,0];
             //Node ending = transform.GetComponent<Grid>().grid[30,4,25];
             transform.GetComponent<PathFinder>().FindPath(starting, ending);
@@ -108,7 +108,7 @@ namespace GraphDungeon
                 if (place == true)
                 {
                     transform.GetComponent<Grid>().grid[(int)(position.x + boundryVec.x), (int)(position.y + boundryVec.y), (int)(position.z + boundryVec.z)] = tempNode;
-                    
+
                     listOfNodes.Add(tempNode);
                     PlaceRoom(tempNode.bounds.position, tempNode.bounds.size, tempNode);
                 }
@@ -225,7 +225,7 @@ namespace GraphDungeon
         public int GenerateRandomEvenNumber(int max, int min) // Function that generates even number its crucial soo our grid cells are alligned exacly with rooms
         {
             int randomNumber = UnityEngine.Random.Range(min, max + 1);
-            if (randomNumber % 2 != 0) 
+            if (randomNumber % 2 != 0)
             {
                 return randomNumber;
             }
