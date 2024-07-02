@@ -1,0 +1,829 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.24f1 (cf10dcf7010d) revision 13570268'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'pl' Physical Memory: 16307 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.24f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/mabuza/GraphBasedDungeon/DungeonDoneGood
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+60746
+Successfully changed project path to: C:/Users/mabuza/GraphBasedDungeon/DungeonDoneGood
+C:/Users/mabuza/GraphBasedDungeon/DungeonDoneGood
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [3828] Host "[IP] 192.168.1.9 [Port] 0 [Flags] 2 [Guid] 2308674847 [EditorId] 2308674847 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-PJBN9BQ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [3828] Host "[IP] 192.168.1.9 [Port] 0 [Flags] 2 [Guid] 2308674847 [EditorId] 2308674847 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-PJBN9BQ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 61.56 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.24f1 (cf10dcf7010d)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/mabuza/GraphBasedDungeon/DungeonDoneGood/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 Ti (ID=0x24c9)
+    Vendor:   NVIDIA
+    VRAM:     8024 MB
+    Driver:   31.0.15.5161
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56112
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.009555 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 57.49 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.518 seconds
+Domain Reload Profiling:
+	ReloadAssembly (518ms)
+		BeginReloadAssembly (74ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (355ms)
+			LoadAssemblies (72ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (81ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (20ms)
+			SetupLoadedEditorAssemblies (211ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (58ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (108ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005648 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.789 seconds
+Domain Reload Profiling:
+	ReloadAssembly (790ms)
+		BeginReloadAssembly (105ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (598ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (194ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (269ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (68ms)
+				ProcessInitializeOnLoadAttributes (170ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3052 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 22 unused Assets / (56.5 KB). Loaded Objects now: 3514.
+Memory consumption went from 107.5 MB to 107.5 MB.
+Total: 2.760300 ms (FindLiveObjects: 0.242700 ms CreateObjectMapping: 0.145400 ms MarkObjects: 2.305800 ms  DeleteObjects: 0.065800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 46130.763515 seconds.
+  path: Assets/RoomPrefabs/Room1.prefab
+  artifactKey: Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room1.prefab using Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e6f3936e9cc9d2375df58a1c5dc88ed') in 0.108489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.463180 seconds.
+  path: Assets/RoomPrefabs/Room1 1.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room1 1.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38a27b42eefba66e2347dba323a72cb0') in 0.014347 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.928757 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29f02a9c0e5aec2a6d72daeaf41fda5c') in 0.014030 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.218410 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1463bcca079b0bf3acaae81b03aa6fc0') in 0.008478 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.384706 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9374f3aab276215a151aecc55c59b3a') in 0.013421 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.446279 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb597493c000b4f9dbf9eeecf40e6387') in 0.011358 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.595089 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d93fad51a8dff406f792cdcc235d2fa') in 0.008314 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.201777 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c3d89dce086d80f1ca88d925fa8f319') in 0.015389 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.403569 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdc988b51daad3e2a0dfb0a8e726af2e') in 0.013216 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.384185 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13f0eda847a46acdea0c087ab4599d79') in 0.007680 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.234492 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3295a04c259d58ed8c7aec7f41969942') in 0.011940 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.596962 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e466643cf6bee8598a265d5b80665cdd') in 0.011197 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.621476 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efb9ae12efa2dd4b0a1bb7f404ec2155') in 0.011523 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.996935 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'becf49af186c9b2c60e961901411a3a4') in 0.009843 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.005274 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '454fc432a474ef314721bc5148f654fc') in 0.012675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.830693 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a2c06839ce31c1d2ea44632c1be4944') in 0.015538 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.192363 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '570e024b175a91b9612deba5a3bff04d') in 0.012644 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.801580 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b298c0eab3f77d4d1e79fd739baedb84') in 0.011384 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.217612 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '634b8b32c210419c68234e08e32287d0') in 0.017392 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.507605 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6db1e1f9818a4cc75acd4ab3f67d7d49') in 0.013300 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.122862 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f372577f5ee440c69ca77ae344828f7') in 0.009612 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005409 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.741 seconds
+Domain Reload Profiling:
+	ReloadAssembly (742ms)
+		BeginReloadAssembly (122ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (544ms)
+			LoadAssemblies (80ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (181ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (237ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (53ms)
+				ProcessInitializeOnLoadAttributes (153ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.37 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3045 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 15 unused Assets / (24.7 KB). Loaded Objects now: 3527.
+Memory consumption went from 111.7 MB to 111.7 MB.
+Total: 2.369400 ms (FindLiveObjects: 0.199200 ms CreateObjectMapping: 0.104900 ms MarkObjects: 2.048000 ms  DeleteObjects: 0.016600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 44.844194 seconds.
+  path: Assets/PlaceRooms.cs
+  artifactKey: Guid(575c7e1480f089c498a1b39169633e96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlaceRooms.cs using Guid(575c7e1480f089c498a1b39169633e96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcb6f872763480aec97a97bcb8e67345') in 0.021488 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.932383 seconds.
+  path: Assets/RoomPrefabs/Room1.prefab
+  artifactKey: Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room1.prefab using Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b276e2bdd1d00b89618256229ddea38') in 0.054177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.856324 seconds.
+  path: Assets/RoomPrefabs/Room2.prefab
+  artifactKey: Guid(eb8a647eab100484493e2c00e0df0c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room2.prefab using Guid(eb8a647eab100484493e2c00e0df0c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1f11cbb44bd51a38038173333c99786') in 0.021795 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.880262 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d4612ebbe15710997ff5d5f4ccf97a7') in 0.007134 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005470 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.799 seconds
+Domain Reload Profiling:
+	ReloadAssembly (800ms)
+		BeginReloadAssembly (125ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (588ms)
+			LoadAssemblies (83ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (208ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (244ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (54ms)
+				ProcessInitializeOnLoadAttributes (158ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.61 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3045 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 15 unused Assets / (24.6 KB). Loaded Objects now: 3530.
+Memory consumption went from 111.8 MB to 111.7 MB.
+Total: 3.113000 ms (FindLiveObjects: 0.295400 ms CreateObjectMapping: 0.241300 ms MarkObjects: 2.547400 ms  DeleteObjects: 0.028200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006258 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.799 seconds
+Domain Reload Profiling:
+	ReloadAssembly (799ms)
+		BeginReloadAssembly (124ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (593ms)
+			LoadAssemblies (83ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (192ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (259ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (62ms)
+				ProcessInitializeOnLoadAttributes (162ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3045 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 15 unused Assets / (24.6 KB). Loaded Objects now: 3533.
+Memory consumption went from 111.8 MB to 111.7 MB.
+Total: 3.070900 ms (FindLiveObjects: 0.277100 ms CreateObjectMapping: 0.236300 ms MarkObjects: 2.537600 ms  DeleteObjects: 0.019100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005214 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.801 seconds
+Domain Reload Profiling:
+	ReloadAssembly (802ms)
+		BeginReloadAssembly (135ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (582ms)
+			LoadAssemblies (88ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (205ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (244ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (58ms)
+				ProcessInitializeOnLoadAttributes (156ms)
+				ProcessInitializeOnLoadMethodAttributes (14ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3045 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 15 unused Assets / (24.7 KB). Loaded Objects now: 3536.
+Memory consumption went from 111.8 MB to 111.8 MB.
+Total: 2.518300 ms (FindLiveObjects: 0.208400 ms CreateObjectMapping: 0.129200 ms MarkObjects: 2.162900 ms  DeleteObjects: 0.017300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007042 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.876 seconds
+Domain Reload Profiling:
+	ReloadAssembly (877ms)
+		BeginReloadAssembly (147ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (622ms)
+			LoadAssemblies (98ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (216ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (258ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (55ms)
+				ProcessInitializeOnLoadAttributes (166ms)
+				ProcessInitializeOnLoadMethodAttributes (15ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.14 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3045 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 15 unused Assets / (24.6 KB). Loaded Objects now: 3539.
+Memory consumption went from 111.8 MB to 111.8 MB.
+Total: 2.556600 ms (FindLiveObjects: 0.226400 ms CreateObjectMapping: 0.167300 ms MarkObjects: 2.141500 ms  DeleteObjects: 0.020600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 212.810408 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78d315b17c85c608e698b14819b33e49') in 0.053520 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005513 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.777 seconds
+Domain Reload Profiling:
+	ReloadAssembly (777ms)
+		BeginReloadAssembly (127ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (567ms)
+			LoadAssemblies (79ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (193ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (247ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (60ms)
+				ProcessInitializeOnLoadAttributes (154ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.59 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3045 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 15 unused Assets / (24.7 KB). Loaded Objects now: 3542.
+Memory consumption went from 111.8 MB to 111.8 MB.
+Total: 2.535800 ms (FindLiveObjects: 0.244700 ms CreateObjectMapping: 0.132900 ms MarkObjects: 2.140900 ms  DeleteObjects: 0.016600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 24.217846 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9b2687cfee17983361b0021067453f7') in 0.045815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.045376 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35f52de31c94dd0d1b9e4af12a2a7657') in 0.007591 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005178 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\mabuza\GraphBasedDungeon\DungeonDoneGood\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.843 seconds
+Domain Reload Profiling:
+	ReloadAssembly (844ms)
+		BeginReloadAssembly (136ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (615ms)
+			LoadAssemblies (92ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (201ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (267ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (66ms)
+				ProcessInitializeOnLoadAttributes (170ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.40 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3045 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 15 unused Assets / (24.7 KB). Loaded Objects now: 3545.
+Memory consumption went from 111.8 MB to 111.8 MB.
+Total: 2.401300 ms (FindLiveObjects: 0.204100 ms CreateObjectMapping: 0.117900 ms MarkObjects: 2.061700 ms  DeleteObjects: 0.017000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 67.874706 seconds.
+  path: Assets/RoomPrefabs/Room1.prefab
+  artifactKey: Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room1.prefab using Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73d0b394e0a9ccaba88baa58fb116ec6') in 0.045942 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.935904 seconds.
+  path: Assets/RoomPrefabs/Room1.prefab
+  artifactKey: Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room1.prefab using Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1fe10bd639621cbee339658ffcc7410') in 0.008396 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.802826 seconds.
+  path: Assets/RoomPrefabs/Room1.prefab
+  artifactKey: Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room1.prefab using Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b7248e5bc0fb350aa8f119799f1884a') in 0.011243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.607242 seconds.
+  path: Assets/RoomPrefabs/Room1.prefab
+  artifactKey: Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room1.prefab using Guid(7b1aa89dd6cb2874bb020ca9be725727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '414ed401c2456d4f0947adb8e50f3d3c') in 0.011904 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.074694 seconds.
+  path: Assets/RoomPrefabs/Room2.prefab
+  artifactKey: Guid(eb8a647eab100484493e2c00e0df0c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room2.prefab using Guid(eb8a647eab100484493e2c00e0df0c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22afb7351c3dc52b2809ae99b5e33586') in 0.008258 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.012834 seconds.
+  path: Assets/RoomPrefabs/Room2.prefab
+  artifactKey: Guid(eb8a647eab100484493e2c00e0df0c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room2.prefab using Guid(eb8a647eab100484493e2c00e0df0c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e011e5c8dab324f8c0f5ccc354534e02') in 0.012576 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.200875 seconds.
+  path: Assets/RoomPrefabs/Room2.prefab
+  artifactKey: Guid(eb8a647eab100484493e2c00e0df0c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room2.prefab using Guid(eb8a647eab100484493e2c00e0df0c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce01eb4d5f68f28b98f552855b99559b') in 0.011840 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.717832 seconds.
+  path: Assets/RoomPrefabs/Room2.prefab
+  artifactKey: Guid(eb8a647eab100484493e2c00e0df0c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room2.prefab using Guid(eb8a647eab100484493e2c00e0df0c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97f496cf47063f3eaf485f25450c5471') in 0.010101 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.519029 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc62b438e022806ffc303c5120b1af89') in 0.014574 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.234545 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8db3accebb722d09f5867e0cc342bd0') in 0.007274 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.607826 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b29251c9e39fb7bb06c4dce986fee93') in 0.007459 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.032052 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dadf5a4371efe40b21dc00a60d6f7ed7') in 0.011277 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.261622 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86322bf499c9873021bd45a624a7c77c') in 0.008033 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.597565 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba1c453c0379817a137698d304472ce4') in 0.007753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.725223 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3885987b74171e036bda9c97657086f') in 0.007502 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.597962 seconds.
+  path: Assets/RoomPrefabs/Room3.prefab
+  artifactKey: Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoomPrefabs/Room3.prefab using Guid(f5ad268413822464f8e73e710b430f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57adbe097d5249a49b582dd05e9ddef8') in 0.011263 seconds 
