@@ -16,10 +16,7 @@ namespace Graphdunegon
         {
             //transform.GetComponent<Grid>().CreateGrid();
             //transform.GetComponent<PlaceRooms>().CreateRooms();
-            foreach (var cell in transform.GetComponent<Grid>().grid)
-            {
-                Debug.Log(cell.nodeType);
-            }
+
         }
 
     }

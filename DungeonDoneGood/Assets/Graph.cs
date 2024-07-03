@@ -43,7 +43,7 @@ namespace Graphdunegon
         }
     }
 
-    public class Edge : MonoBehaviour
+    public class Edge
     {
         public Node sourceNode; public Node targetNode;
         public float weight;
@@ -53,13 +53,13 @@ namespace Graphdunegon
             
             sourceNode = _sourceNode;
             targetNode = _targetNode;
-            weight = Vector3.Distance(_sourceNode.bounds.position, _targetNode.bounds.position);
+            //weight = Vector3.Distance(_sourceNode.worldPosition, _targetNode.worldPosition);
 
         }
 
         public void DrawFinalLines()
         {
-            Debug.DrawLine(sourceNode.bounds.position, targetNode.bounds.position, Color.red, 10000000f);
+            Debug.DrawLine(sourceNode.worldPosition, targetNode.worldPosition, Color.green, 10000000f);
         }
     }
     

@@ -242,10 +242,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomSize: {x: 20, y: 10, z: 20}
-  listOfExits:
+  destinationList:
   - {fileID: 1916715152497279908}
   - {fileID: 4870909778884940468}
-  listOfEntrences:
   - {fileID: 1009440578940519305}
   - {fileID: 5587498648092403771}
 --- !u!1 &451506789459851816

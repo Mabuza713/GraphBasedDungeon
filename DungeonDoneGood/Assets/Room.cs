@@ -8,11 +8,9 @@ namespace Graphdunegon
     public class Room : MonoBehaviour
     {
         public Vector3Int roomSize;
-        public List<GameObject> listOfExits;
-        public List<GameObject> listOfEntrences;
-        
-        
-        
+        public List<GameObject> destinationList;
+        public List<Node> destinationNodesList = new List<Node>();
 
+        
     }
 }

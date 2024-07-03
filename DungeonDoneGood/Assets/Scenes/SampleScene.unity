@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -313,6 +313,9 @@ GameObject:
   - component: {fileID: 1056724639}
   - component: {fileID: 1056724638}
   - component: {fileID: 1056724641}
+  - component: {fileID: 1056724642}
+  - component: {fileID: 1056724643}
+  - component: {fileID: 1056724644}
   m_Layer: 0
   m_Name: DungeonGeneratorManager
   m_TagString: Untagged
@@ -333,13 +336,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomAmount: 700
-  worldBoundry: {x: 500, y: 250, z: 500}
+  worldBoundry: {x: 500, y: 50, z: 500}
   roomPrefabs:
   - {fileID: 567684275813446224, guid: 7b1aa89dd6cb2874bb020ca9be725727, type: 3}
   - {fileID: 441974339047869624, guid: eb8a647eab100484493e2c00e0df0c98, type: 3}
   - {fileID: 567684275813446224, guid: f5ad268413822464f8e73e710b430f34, type: 3}
-  roomSpacing: 100
-  edgeList: []
+  roomSpacing: 50
 --- !u!114 &1056724639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,3 +389,39 @@ MonoBehaviour:
   gridSizeX: 0
   gridSizeY: 0
   gridSizeZ: 0
+--- !u!114 &1056724642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056724637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f11503734d891847a50517be198d951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1056724643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056724637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3502e37d2c14c40b56e1a6c437d2e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1056724644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056724637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0735ff338f832074eaf35e0d83f59820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

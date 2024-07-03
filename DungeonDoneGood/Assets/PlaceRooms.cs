@@ -29,6 +29,12 @@ namespace Graphdunegon
             girdSizeY = transform.GetComponent<Grid>().gridSizeY;
             girdSizeZ = transform.GetComponent<Grid>().gridSizeZ;
             CreateRooms();
+            transform.GetComponent<CalculateTetrahedrons>().CalculateConnections();
+            List<Edge> finalEdgeList = transform.GetComponent<PrimAlgo>().PrimAlgorithm();
+            foreach (Edge edge in finalEdgeList)
+            {
+                transform.GetComponent<PathFinding>().FindPath(edge.sourceNode, edge.targetNode);
+            }
         }
         public void CreateRooms()
         {
@@ -43,10 +49,6 @@ namespace Graphdunegon
                                                          Random.Range(0, girdSizeZ));
 
 
-                Vector3Int position = grid[gridPosition.x, gridPosition.y, gridPosition.z].bounds.position;
-                Vector3Int size = new Vector3Int(roomPrefab.GetComponent<Room>().roomSize.x,// size of room
-                                                 roomPrefab.GetComponent<Room>().roomSize.y,
-                                                 roomPrefab.GetComponent<Room>().roomSize.z);
 
                 // Creating two nodes, one bigger than other, it will allow us to check if there is enough space so two rooms wont intersect
                 Node tempNode = grid[gridPosition.x, gridPosition.y, gridPosition.z];
@@ -76,18 +78,29 @@ namespace Graphdunegon
                 {
                     
                     GameObject tempObj = Instantiate(roomPrefab);
-                    Debug.Log("working");
-                    grid[gridPosition.x, gridPosition.y, gridPosition.z].isWalkable = false;
+
+
+
+                    grid[gridPosition.x, gridPosition.y, gridPosition.z].isWalkable = false; 
                     tempObj.transform.position = tempNode.worldPosition;
-                    nodeList.Add(tempNode); // appending node to list of all valid rooms
+                    nodeList.Add(grid[gridPosition.x, gridPosition.y, gridPosition.z]); // appending node to list of all valid rooms
+                    foreach (GameObject nodePositionObject in tempObj.GetComponent<Room>().destinationList) // We are appending nodes to list
+                    {
+                        if (nodePositionObject.transform.position.x > 0 && nodePositionObject.transform.position.x < worldBoundry.x &&
+                            nodePositionObject.transform.position.y > 0 && nodePositionObject.transform.position.y < worldBoundry.y &&
+                            nodePositionObject.transform.position.z > 0 && nodePositionObject.transform.position.z < worldBoundry.z)
+                        {
+                            tempObj.GetComponent<Room>().destinationNodesList.Add(transform.GetComponent<Grid>().NodeFromWorldPosition(nodePositionObject.transform.position));
+
+                        }
+                    }
                     for (int j = -Mathf.RoundToInt(roomPrefab.GetComponent<Room>().roomSize.x/5 / 2); j <= Mathf.RoundToInt(roomPrefab.GetComponent<Room>().roomSize.x / 5 / 2); ++j)
                     {
                         for (int k = -Mathf.RoundToInt(roomPrefab.GetComponent<Room>().roomSize.y / 5 / 2); k <= Mathf.RoundToInt(roomPrefab.GetComponent<Room>().roomSize.y / 5 / 2); k++)
                         {
                             for (int l = -Mathf.RoundToInt(roomPrefab.GetComponent<Room>().roomSize.z / 5 / 2); l <= Mathf.RoundToInt(roomPrefab.GetComponent<Room>().roomSize.z / 5 / 2); l++)
                             {
-                                //Debug.Log(girdSizeX + " " + girdSizeY + " " + girdSizeZ);
-                                //Debug.Log(gridPosition.x + j + " " + gridPosition.y + k + " " + gridPosition.z + l);
+                              
                                 // might need to add a check if they are still in boundry of grid
                                 // positive vals 
                                 if (gridPosition.x + j >= girdSizeX || gridPosition.y + k >= girdSizeY || gridPosition.z + l >= girdSizeZ)
@@ -102,8 +115,6 @@ namespace Graphdunegon
                                 }
                                 else
                                 {
-
-
                                     grid[gridPosition.x + j, gridPosition.y + k, gridPosition.z + l].isWalkable = false;
                                     grid[gridPosition.x + j, gridPosition.y + k, gridPosition.z + l].intersectingObject = tempObj;
                                     grid[gridPosition.x + j, gridPosition.y + k, gridPosition.z + l].nodeType = Node.cellType.Room;

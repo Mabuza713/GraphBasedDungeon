@@ -339,12 +339,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomSize: {x: 20, y: 10, z: 30}
-  listOfExits:
-  - {fileID: 1971291033531825484}
-  - {fileID: 4781158300392615004}
-  listOfEntrences:
+  destinationList:
   - {fileID: 1135087826430033249}
   - {fileID: 5496692737935922899}
+  - {fileID: 1971291033531825484}
+  - {fileID: 4781158300392615004}
 --- !u!1 &618148437406069295
 GameObject:
   m_ObjectHideFlags: 0
