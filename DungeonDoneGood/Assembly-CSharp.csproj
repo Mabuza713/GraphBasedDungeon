@@ -64,6 +64,7 @@
     <Compile Include="Assets\PlaceRooms.cs" />
     <Compile Include="Assets\MainDunegonManager.cs" />
     <Compile Include="Assets\CalculateTetrahedrons.cs" />
+    <Compile Include="Assets\NewBehaviourScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
