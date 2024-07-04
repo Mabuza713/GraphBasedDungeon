@@ -345,10 +345,13 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/CalculateTetrahedrons.cs"
 "Assets/Graph.cs"
 "Assets/Grid.cs"
 "Assets/MainDunegonManager.cs"
+"Assets/PathFinding.cs"
 "Assets/PlaceRooms.cs"
+"Assets/PrimAlgo.cs"
 "Assets/Room.cs"
 -langversion:9.0
 

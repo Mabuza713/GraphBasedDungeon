@@ -6,7 +6,7 @@ using UnityEditor.ProjectWindowCallback;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace GraphDungeon
+namespace GraphDungeonn
 {
     public class PathFinder : MonoBehaviour
     {

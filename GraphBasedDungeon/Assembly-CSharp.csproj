@@ -56,11 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PathFinder.cs" />
-    <Compile Include="Assets\Scripts\Graph.cs" />
-    <Compile Include="Assets\Scripts\PlaceRandomRooms.cs" />
     <Compile Include="Assets\Scripts\Prefabs\FinalPrefabs\PlacePrefabs.cs" />
-    <Compile Include="Assets\Scripts\Grid.cs" />
     <Compile Include="Assets\Scripts\PrimAlgo.cs" />
   </ItemGroup>
   <ItemGroup>

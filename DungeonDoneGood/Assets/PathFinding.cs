@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace Graphdunegon
@@ -30,7 +32,10 @@ namespace Graphdunegon
 
                 if (currentNode == endNode)
                 {
+                    FindClosestRoom(endNode);
+                    FindClosestRoom(startNode);
                     TracePath(endNode, startNode);
+                    DeleteWalls(endNode, startNode);
                     // Trace back the path 
                     break;
                 }
@@ -54,6 +59,27 @@ namespace Graphdunegon
                 }
             }
         }
+        public LayerMask roomMask;
+        public void FindClosestRoom(Node node)
+        {
+            Collider[] startColliders = Physics.OverlapSphere(node.worldPosition, 5, roomMask);
+            float minDistance = 100000;
+            GameObject remembered = null; 
+            foreach (Collider colider in startColliders)
+            {
+                if (Vector3.Distance(colider.transform.gameObject.transform.position, node.worldPosition) < minDistance)
+                {
+                    minDistance = Vector3.Distance(colider.transform.gameObject.transform.position, node.worldPosition);
+                    remembered = colider.transform.gameObject;
+
+                }
+            }
+            node.intersectingObject = remembered.transform.parent.parent.gameObject;
+        }
+
+
+        public GameObject hallwayStraight;
+        public GameObject hallwayUp;
 
         public void TracePath(Node endNode, Node startNode)
         {
@@ -61,10 +87,61 @@ namespace Graphdunegon
 
             while (currentNode != startNode) 
             {
+
+                GameObject temp = Instantiate(hallwayStraight);
+                temp.transform.position = currentNode.worldPosition - Vector3.up * 3f;
                 currentNode.isWalkable = false;
                 currentNode = currentNode.parentNode;
             }
             currentNode.isWalkable = false;
+            GameObject newTemp = Instantiate(hallwayStraight);
+            newTemp.transform.position = currentNode.worldPosition - Vector3.up * 3f;
+        }
+        public LayerMask Wall;
+        public void DeleteWalls(Node endNode, Node startNode)
+        {
+            Physics.SyncTransforms();
+
+            Node currentNode = endNode;
+            RaycastHit hitEnd;
+            if (Physics.Raycast(currentNode.worldPosition, -(currentNode.worldPosition - new Vector3(currentNode.intersectingObject.transform.position.x, currentNode.intersectingObject.transform.position.y, currentNode.intersectingObject.transform.position.z)), out hitEnd, 5f, Wall))
+            {
+                Destroy(hitEnd.transform.gameObject);
+            }
+
+            while (currentNode != startNode)
+            {
+                RaycastHit hit1;
+                
+                if( Physics.Raycast(currentNode.worldPosition, (currentNode.parentNode.worldPosition - currentNode.worldPosition).normalized,out hit1, 5f,Wall))
+                {
+                    Destroy(hit1.transform.gameObject);
+                }
+
+                RaycastHit hit2;
+
+                if (Physics.Raycast(currentNode.parentNode.worldPosition, (currentNode.worldPosition - currentNode.parentNode.worldPosition).normalized, out hit2, 5f,Wall))
+                {
+                    Destroy(hit2.transform.gameObject);
+                }
+
+                currentNode = currentNode.parentNode;
+            }
+            RaycastHit hitStart;
+
+            if (Physics.Raycast(currentNode.worldPosition, -(currentNode.worldPosition - new Vector3(currentNode.intersectingObject.transform.position.x, currentNode.intersectingObject.transform.position.y, currentNode.intersectingObject.transform.position.z)), out hitStart, 5f, Wall))
+            {
+                Destroy(hitStart.transform.gameObject);
+            }
+
+        }
+
+        public Vector3 CalculateDirection(Vector3 position1, Vector3 position2)
+        {
+            Vector3 result = (position1 - position2).normalized;
+
+            return result;
+
         }
     }
 

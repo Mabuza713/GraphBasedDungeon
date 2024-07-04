@@ -5,7 +5,7 @@ using System.Diagnostics.Tracing;
 using UnityEngine;
 
 
-namespace GraphDungeon
+namespace GraphDungeonn
 {
     public class PrimAlgo : MonoBehaviour
     {

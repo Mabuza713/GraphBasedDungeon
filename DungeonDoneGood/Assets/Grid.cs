@@ -95,7 +95,7 @@ namespace Graphdunegon
                     Gizmos.color = Color.red;
                     if (node.isWalkable == false)
                     {
-                        Gizmos.DrawCube(node.worldPosition, Vector3.one * nodeDiameter);
+                        //Gizmos.DrawCube(node.worldPosition, Vector3.one * nodeDiameter);
 
                     }
                 }

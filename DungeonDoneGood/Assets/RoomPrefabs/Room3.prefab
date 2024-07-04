@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4219712859149810039}
   - component: {fileID: 1107772179567589910}
   - component: {fileID: 2023551562414703418}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4947429525989573692}
   - component: {fileID: 3775391736809031301}
   - component: {fileID: 7546003633721898878}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 426989803007775853}
   - component: {fileID: 5966912346072589471}
   - component: {fileID: 90645337716190959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5dd0dc6c781ce4289b69e10f403a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomSize: {x: 20, y: 10, z: 30}
+  roomSize: {x: 20, y: 20, z: 30}
   destinationList:
   - {fileID: 1135087826430033249}
   - {fileID: 5496692737935922899}
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 2084897485420285647}
   - component: {fileID: 6326988991757156087}
   - component: {fileID: 3688432274003506048}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +406,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 3027752080081222739}
   - component: {fileID: 5118748848456610884}
   - component: {fileID: 1862983501396967571}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 375022421224331824}
   - component: {fileID: 4441390674189074076}
   - component: {fileID: 8611714485013867385}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 3726181254736530167}
   - component: {fileID: 4120958213189663242}
   - component: {fileID: 4368752409754076602}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -806,7 +806,7 @@ GameObject:
   - component: {fileID: 7034086069565564448}
   - component: {fileID: 2711208263321831982}
   - component: {fileID: 1632999897967946642}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -936,7 +936,7 @@ GameObject:
   - component: {fileID: 5618443203789945253}
   - component: {fileID: 1370649721814745516}
   - component: {fileID: 8967657893336096045}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -986,7 +986,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1080,7 +1080,7 @@ GameObject:
   - component: {fileID: 6263300224559448615}
   - component: {fileID: 1164955897551150692}
   - component: {fileID: 9212763868105053835}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1130,7 +1130,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1177,7 +1177,7 @@ GameObject:
   - component: {fileID: 4024052550573241011}
   - component: {fileID: 6133022318838984604}
   - component: {fileID: 3938758759519116119}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1227,7 +1227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1274,7 +1274,7 @@ GameObject:
   - component: {fileID: 5327409850434580579}
   - component: {fileID: 4809749334026628951}
   - component: {fileID: 9087510839845205950}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1324,7 +1324,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1433,7 +1433,7 @@ GameObject:
   - component: {fileID: 2866179611889424725}
   - component: {fileID: 1933684173752569745}
   - component: {fileID: 1457844373550239930}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1483,7 +1483,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1530,7 +1530,7 @@ GameObject:
   - component: {fileID: 5321046869803298404}
   - component: {fileID: 2374026433454708571}
   - component: {fileID: 5736729549582390106}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1580,7 +1580,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1627,7 +1627,7 @@ GameObject:
   - component: {fileID: 5296587568896037638}
   - component: {fileID: 6510665562052077703}
   - component: {fileID: 3326986525245765182}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1677,7 +1677,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1757,7 +1757,7 @@ GameObject:
   - component: {fileID: 4461655678921764101}
   - component: {fileID: 9011567266421985078}
   - component: {fileID: 6374972911721658619}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1807,7 +1807,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e41ca9d90acf16f4e90728309fa4bcd5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

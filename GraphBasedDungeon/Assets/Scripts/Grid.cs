@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-namespace GraphDungeon
+namespace GraphDungeonn
 {
     public class Grid : MonoBehaviour
     {

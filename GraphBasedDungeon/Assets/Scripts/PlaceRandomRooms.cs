@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 
-namespace GraphDungeon
+namespace GraphDungeonn
 {
 
     public class PlaceRandomRooms : MonoBehaviour
