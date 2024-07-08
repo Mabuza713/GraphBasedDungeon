@@ -1,5 +1,4 @@
 ﻿Maciej Skorupski										05.07.2024
-279920
 Inżynieria Systemów										
 
 **Generowanie losowego układu pomieszczeń
