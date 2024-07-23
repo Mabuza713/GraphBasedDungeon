@@ -1,285 +1,68 @@
-﻿Maciej Skorupski										05.07.2024
-Inżynieria Systemów										
+# 3D Random Room Layout Generator
 
-**Generowanie losowego układu pomieszczeń
-w przestrzeni trójwymiarowej**
+This project aims to generate random room layouts in a three-dimensional space. This system is particularly useful for creating diverse structures without manual modeling, making it ideal for applications like video games where each session can offer unique experiences to players.
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Problem Description](#problem-description)
+- [3D Grid Creation](#3d-grid-creation)
+- [Room Generation](#room-generation)
+- [Graph Vertex Connection](#graph-vertex-connection)
+- [Connection Reduction](#connection-reduction)
+- [Pathfinding](#pathfinding)
+- [Conclusion](#conclusion)
+- [References](#references)
 
+## Introduction
+The purpose of this project is to demonstrate a method for connecting randomly placed rooms in a 3D space. The process uses the Unity engine and C# programming language to automate structure generation and visualize results.
 
+## Problem Description
+Generating a random layout of rooms and simulating them in 3D poses several challenges:
+- Generated structures must form a cohesive whole. Rooms and pathways must not intersect, allowing free player movement.
+- The map must offer interesting and unique experiences each time it is generated.
 
+To meet these requirements, the concept of a graph is used where rooms are nodes and connections between them are edges, facilitating easy navigation and management of the space.
 
+## 3D Grid Creation
+To organize the operational space, a 3D array is used to store data about all possible vertices. The `CreateGrid` function initializes vertices in a grid with user-defined parameters, assigning positions both in the grid and in space.
 
+### Key Functions
+- **NodeFromWorldPosition**: Parses data about the vertex's position in the world to its position in the 3D grid.
+- **GetNeighboringCells**: Returns a list of vertices directly adjacent to a selected vertex.
 
+## Room Generation
+Rooms are generated from a predefined list of templates to maintain control over their appearance, ensuring scalability for future project expansions. The `Room` class includes information about room size and available exits/entrances.
 
+### Steps
+1. Define the maximum number of rooms and the area where they can be placed, ensuring a minimum distance between rooms.
+2. Select a template and a random location in space.
+3. Use `CheckBoundaries` to ensure rooms do not overlap or exceed the defined area.
+4. Create an instance of the room and map its exits to corresponding vertices using `NodeFromWorldPosition`.
+5. Redefine properties of vertices within the room's dimensions to ensure correct corridor generation.
 
+## Graph Vertex Connection
+To ensure proper paths between rooms, the center coordinates of spheres passing through four different rooms are calculated. If the center is empty, mutual edges between vertices (rooms) are created.
 
+### Key Functions
+- **AddNodesToLinkedNodesList**: Links vertices.
+- **CalculateCircumsphere**: Uses a 4x4 matrix to solve the sphere equation and determine valid room quartets for edge creation.
 
+## Connection Reduction
+A modified Prim’s algorithm is used to reduce connections, resulting in a minimal spanning tree. The algorithm adds the first vertex from `nodeList` and creates edges until the number of edges equals the number of rooms minus one.
 
+### Key Functions
+- **CurrentPossibleEdges**: Searches for and creates the edge with the smallest weight (distance).
 
+## Pathfinding
+The A* algorithm is used to find paths between vertices. The `TracePath` function reconstructs the path, placing corridor instances at appropriate vertices and setting stairs for vertical movement. 
 
+### Key Functions
+- **DeleteWalls**: Detects and removes walls between adjacent vertices to allow passage.
 
+## Conclusion
+The implementation of this system for generating random room layouts can serve as a foundation for creating varied and engaging maps, useful in video games to offer unique player experiences in each session.
 
-
-
-
-
-
-
-
-
-**Spis Treści:**
-
-- Wstęp
-- Wprowadzenie do omawianego problemu
-- Tworzenie trójwymiarowej siatki
-- Generowanie pomieszczeń
-- Łączenie wierzchołków grafu
-- Redukcja połączeń między wierzchołkami
-- Znalezienie drogi pomiędzy dwoma wierzchołkami
-- Wnioski
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**Wstęp:**
-
-Celem tego sprawozdania jest przedstawienie metody łączenia losowo rozmieszczonych pomieszczeń w przestrzeni trójwymiarowej. Proces ten umożliwia tworzenie różnorodnych struktur bez konieczności ręcznego modelowania dróg między nimi. System ten jest szczególnie użyteczny w produkcji gier komputerowych, gdzie każda nowa sesja może oferować graczowi unikalne doznania. Do automatycznego generowania struktur i wizualizacji rezultatów wykorzystałem silnik Unity oraz język programowania C#.
-
-
-**Wprowadzenie do omawianego problemu:**
-
-`	`Generowanie losowego układu pomieszczeń w przestrzeni i symulacja 3D może stanowić wyzwanie z następujących powodów:
-
-\- Po pierwsze, wygenerowane struktury muszą stanowić razem spójną całość. Wygenerowane pomieszczenia i drogi pomiędzy nimi nie mogą się wzajemnie przecinać, gracz w swobodny sposób powinien być w stanie przemieszczać się przez stworzoną przez nas mapę. 
-
-\- Po drugie,  zaproponowana mapa za każdym razem musi stanowić ciekawe i unikalne doświadczenie dla gracza.
-
-W celu zapewnienia wyżej obranych wymagań, skorzystamy z koncepcji grafu, gdzie pomieszczenia reprezentowane będą jako wierzchołki (Node), natomiast połączenia między nimi jako krawędzie (Edge). Struktura ta umożliwi nam w łatwy sposób nawigację i zarządzanie zdefiniowaną ówcześnie przestrzenią.
-
-Definicja krawędzi:
-
-Zaproponowana przeze mnie klasa pozwoli nam opisać połączenie między dwoma wierzchołkami, natomiast funkcja *DrawFinalLines* pozwoli na wizualizacje ów połączenia.
-
-
-
-
-
-Definicja wierzchołka:
-
-Zamodelowana przeze mnie klasa zawierająca między innymi informacje na temat położenia wierzchołka zarówno w siatce jak i przestrzeni, informacje czy dany wierzchołek może posłużyć za drogę łączącą dwa pokoje, lub jaki obiekt znajduje się w miejscu naszego wierzchołka, jaki i reprezentowany przez niego typ. 
-
-Opisanie przestrzeni w ten sposób umożliwi mi w łatwiejszy sposób opisanie zależności między stworzonymi pokojami i łączącymi je korytarzami.
-
-
-
-
-
-
-
-
-**Tworzenie trójwymiarowej siatki:**
-
-W celu uporządkowania przestrzeni operacyjnej opiszemy ją przy użyciu trójwymiarowej tablicy zawierającej dane o wszystkich możliwych wierzchołka w niej zawartych.
-
-` `W obranym przeze mnie podejściu funkcja *CreateGrid* inicjalizuje wierzchołki w siatce o dowolnie ustalonych parametrach, jednocześnie przypisując każdemu z nich odpowiednią pozycje w  opisywanej przez nas przestrzeni jak i na samej siatce. Ostatecznie możemy pomyśleć o tej przestrzeni jako o sześcianie stworzonym z mniejszych sześcianów, gdzie każdy mniejszy sześcian reprezentuje instancje odpowiedniego wierzchołka. 
-
-Na siatce zdefiniować możemy również inne funkcje które przydatne będą w kontekście późniejszych rozważań, jedną z takich funkcji jest:
-
-- *NodeFromWorldPosition* – funkcja ta umożliwia sparsowanie danych na temat pozycji wierzchołka w świecie na informacje o pozycji wierzchołka w trójwymiarowej siatce.
-- *GetNeighboringCells* – funkcja zwracająca nam listę wierzchołków bezpośrednio stycznych do wybranego wierzchołka.
-
-Wizualizacja Przestrzeni o wymiarach 300x50x300, gdzie biały sześcian
-reprezentuje jeden wierzchołek
-
-
-**Generowanie pomieszczeń:**
-**
-`	`Dla zachowania większej kontroli nad wyglądem pokoi, generowane będą z ówcześnie zdefiniowanej listy, gotowych pomieszczeń. Pozwoli nam to na posiadanie większego wpływu nad wrażeniami i płynnością rozgrywki. System ten jednak musi być z łatwością skalowalny, aby w przyszłości nie utrudniał skalowania projektu, aby zdefiniować ile wierzchołków w przestrzeni wprowadzę kolejną klasę obiektu (Room).
-
-Klasa ta zawiera informacje o wielkości pokoju jak i o dostępnych wyjściach/wejściach. Co w przyszłości pozwoli na uniknięcie błędu związanego z tym ,iż kilka dróg może dążyć do tego samego pokoju w jeden sposób co prowadzić by mogło do nakładania się wzajemnie wielu przejść. 
-
-
-Aby zainicjować pokoje w świecie, należy wcześniej zdefiniować ich maksymalną ilość jak i ramy powierzchni na której możliwe będzie ich ustawienie, jak i minimalną odległość między dwoma pokojami.
-
-Następnie, wybieramy jeden z wcześniej przygotowanych schematów pokoi i losowe miejsce w przestrzeni, które odnosi się do odpowiedniego wierzchołka w trójwymiarowej siatce. Przed ostatecznym stworzeniem obiektu na mapie, sprawdzamy czy nie przecina się on z innym pokojem przy użyciu funkcji *CheckBoundires* oraz czy nie nie wychodzi on poza granice obranego przez nasz obszaru. 
-
-Funkcja *CheckBoundires* stwarza sferę która, zwraca wartość *false* jeżeli w ówcześnie zdefiniowanej odległości *roomSpacing* nie znajduje się żaden obiekt, pozwoli nam to zachować odpowiednią przestrzeń między pokojami co wykluczy ewentualne błędny przy generacji związane z nachodzeniem na siebie dwóch pokoi.
-
-
-Jeżeli, we wcześniejszych krokach nie natknęliśmy się naprzeciw wskazania przed stworzeniem pokoju, w obranym wcześniej miejscu, możemy stworzyć jego instancje na mapie. Następnym krokiem który musi obrać jest zmapowanie wyjść z pokoju do odpowiednich wierzchołków w siatce, korzystamy tutaj z ówcześnie przedstawionej funkcji *NodeFromWorldPosition* , która pozwoli nam na odwołanie się do odpowiedniego wierzchołka przy użyciu pozycji w przestrzeni. 
-
-Kolejnym krokiem jest zredefiniowanie właściwości wierzchołków będących w obrębie postawionego pokoju, oznacza to iż musimy przejść przez wszystkie wierzchołki oddalone od pierwotnie obranego punktu o długość, szerokość i wysokość stawianego pokoju, w odpowiednich płaszczyznach. Procedura ta zapewni, poprawność generacji korytarzy łączących pokoje.
-
-Wizualizacja wierzchołów przez których właściwości zostały zmienione w poprzednim kroku.
-
-Przykładowe rozłożenie pokoi w przestrzeni.
-
-
-**Łączenie wierzchołków grafu:**
-**
-`	`W celu zapewnienia iż będzie istniało poprawne przejście pomiędzy dwoma pokojami, postanowiłem obliczyć środek współrzędne środka sfery przechodzącej przez każde cztery różne pokoje, po czym sprawdziłem czy w środku utworzonej sfery znajduje się jakikolwiek inny pokój. W przypadku gdy środek sfery będzie pusty, stworzyłem wzajemne krawędzie między wierzchołkami w tym przypadku pokojami.
-
-
-
-
-
-
-Funkcja *AddNodesToLinkedNodesList*, służy do powiązania wierzchołków między sobą nawzajem.
-
-
-
-
-Funkcja *CalculateCircumsphere* służy do opisania wcześniej przytoczonej sfery. 
-
-Przedstawiona powyżej funkcja przy użyciu macierzy 4x4 zawierającej pozycje punktów w przestrzeni służy do rozwiązania równania sfery w postaci:
-
-x-a2+y-b2+z-c2=R2
-
-Gdzie bezpośrednio wyznaczniki macierzy xMatrix, yMatrix, zMatrix, aMatirx, cMatrix służą do obliczenia odpowiednio współrzędnej a, b, c oraz promienia R. Do obliczenia ów wyznaczników zastosowałem metodę *determinant* dostępną w silniku Unity. Ostatecznie wystarczyło podstawić otrzymane wyniki do następujących wzorów:
-
-a=Dx2Da
-
-b=Dy2Da
-
-C=Dz2Da
-
-R=a2+b2+C2-DcDa  lub R = Dx2+Dy2+Dz2-4DaDc2Da
-
-
-
-
-
-Gdzie odpowiednio:
-
-Dx = x12+y12+z12y1z11x22+y22+z22y2z21x32+y32+z32y3z31x42+y42+z42y4z41
-
-Dy = x12+y12+z12x1z11x22+y22+z22x2z21x32+y32+z32x3z31x42+y42+z42x4z41
-
-Dz = x12+y12+z12x1y11x22+y22+z22x2y21x32+y32+z32x3y31x42+y42+z42x4y41
-
-Dc = x12+y12+z12x1y1z1x22+y22+z22x2y2z2x32+y32+z32x3y3z3x42+y42+z42x4y4z4
-
-Da = x1y1z11x2y2z21x3y3z31x4y4z41
-
-Jeżeli jedynymi obiektami wewnątrz naszej sfery są jedynie cztery pokoje i wyznacznik macierzy Da jest różny od zera, uznajemy wtedy je za poprawną czwórkę  i tworzymy między nimi krawędzie, co w późniejszych rozważaniach pozwoli wygenerować między nimi ścieżki.
-
-
-
-
-
-
-
-
-
-
-
-
-
-**Redukcja połączeń między wierzchołkami:**
-
-W celu redukcji połączeń między wierzchołkami zamierzam użyć zmodyfikowanej wersji algorytmu Prim’a dla otrzymania minimalnego rozpięcia drzewa. 
-
-Algorytm ten zaczyna od dodania pierwszego wierzchołka z listy *nodeList* zawierającej informacje na temat wierzchołków wybranych za środek pokoju w trakcie ich tworzenia, następnie będzie tworzyć kolejne krawędzie między wierzchołkami dodając je do listy *finalEdgeList* do czasu aż jej długość nie będzie równała się ilości pokoi minus jeden. Odpowiednie krawędzie wybierane i tworzone są w funkcji *CurrentPossibleEdges.*
-
-Funkcja ta przeszukuje wszystkie możliwe krawędzie wychodzące z węzłów zawartych w liście *activatedNodes*, tworząc krawędź między pokojami o najmniejszej wadze (odległościami), aby zapewnić optymalne ułożenie korytarzy wyjścia z dwóch pokoi dobierane są tak aby były one najbliżej siebie.
-
-
-Wizualizacja krawędzi między pokojami/węzłami
-
-
-
-
-
-**Znalezienie drogi między wierzchołkami:**
-
-W celu odnalezienia drogi między dwoma wierzchołkami posłużę się algorytmem a\*, służącym do odnajdywania drogi między dwoma punktami w przestrzeni. W przypadku mojej implementacji starałem się zachować ciągły wygląd korytarzy, przez co, wybierać musiałem często nie najoptymalniejszą drogę, gdyż zazwyczaj ta prowadziła przez linię ukośną.
-**
-
-Funkcja ta rozpoczyna się inicjalizacją dwóch zbiorów *closeSet* i *openSet,* które przechowywać będą informacje o odwiedzonych jak i potencjalnych wierzchołkach. Algorytm ten  będzie działał aż do czasu odnalezienia węzła końcowego. Jeśli aktualnie sprawdzany węzeł nie jest naszym punktem docelowym, algorytm ocenia jego sąsiadów dodając go do zbioru otwartego jeżeli nie jest zawarty w zbiorze zamkniętym oraz wartość *isWalkable* jest prawdziwa co oznacza iż rozpatrywany wierzchołek nie może zawierać innego korytarza lub pokoju, jeżeli te dwa warunki zostaną spełnione zostaje on dodany do zbioru otwartego oraz nasz aktualny wierzchołek jest ustawiany za jego rodzica (parentNode).
-
-Jeżeli aktualny wierzchołek jest naszym wierzchołkiem docelowym zaczynamy odtwarzać drogę, korzystając z funkcji *TracePath*
-
-Funkcja ta tworzy instancję wcześniej stworzonego obiektu korytarza umieszczając go w miejscu odpowiedniego wierzchołka znajdującego się na drodze między wierzchołkiem początkowym a wierzchołkiem końcowym, przy okazji ustawiając schody umożliwiające przemieszczanie w pionie w razie gdy dwa sąsiadujące wierzchołki znajdują się na innych wartościach w płaszczyźnie y. 
-
-Ponieważ bazowy model korytarza jest sześcianem obudowanym ścianami z każdej ze stron, aby umożliwić bezproblemowe przejście między dwoma pokojami musimy usunąć ściany, nam to uniemożliwiające.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Bazowy model korytarza.
-
-W tym celu zdefiniowałem funkcje *DeleteWalls* 
-
-Funkcja ta ma na celu wykrycie ścian stojących pomiędzy dwoma sąsiadującymi wierzchołkami. W celu tym wykorzystałem dwa promienie wychodzące z środków odpowiednich wierzchołkach, zwróconych w swoją stronę. Gdy promień natknie się na ścianę zostaje ona usunięta co pozwoli na przejście pomiędzy pokojami.
-
-Przykładowy korytarz obrazujący przejście promienia pomiędzy dwoma korytarzami.
-
-Ten sam korytarz po usunięciu ścian.
-
-**Wnioski:**
-**
-`	`Implementacja przedstawionego systemu generowania losowego układu pomieszczeń może stanowić szkielet podczas tworzenia zróżnicowanych i interesujących map, które mogą być wykorzystane w np. w grach komputerowych do tworzenia unikalnych doświadczeń dla gracza przy każdej nowej sesji.
-
-Przykładowa mapa na przestrzeni 300x50x300 i rozstawieniu pokoju 50
-
-
-przykład mapy na przestrzeni 200x400x200 i rozstawieniu pokoju 50
-
-
-
-**Bibliografia:**
-
-- <https://vazgriz.com/119/procedurally-generated-dungeons/> 
-- <https://www.youtube.com/watch?v=-L-WgKMFuhE&list=PLFt_AvWsXl0cq5Umv3pMC9SPnKjfp9eGW> autorstwa Sebastaina Lague
-- <https://mathworld.wolfram.com/Circumsphere.html>
-
+## References
+- [Procedurally Generated Dungeons](https://vazgriz.com/119/procedurally-generated-dungeons/)
+- [Sebastian Lague's YouTube Series](https://www.youtube.com/watch?v=-L-WgKMFuhE&list=PLFt_AvWsXl0cq5Umv3pMC9SPnKjfp9eGW)
+- [MathWorld: Circumsphere](https://mathworld.wolfram.com/Circumsphere.html)
